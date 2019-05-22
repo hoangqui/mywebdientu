@@ -1,0 +1,32 @@
+csdl webshopdientu
+
+table product{
+	ma_sp int(10) unsigned not null auto_increment,
+	ten_sp varchar(100) not null,
+	gia_sp decimal not null,
+	mota_sp longtext not null,
+	check_sp char(1) not null default 'N',
+	hinhanh_sp varchar(255) not null,
+	userid int(10) unsigned not null,
+	cate_id int(10) unsigned not null,
+	primary key (ma_sp)
+}
+create table user(
+
+userid int(10) unsigned not null auto_increment,
+username varchar(50) not null,
+password char(32) not null,
+level char(1) default '1' not null,
+primary key(userid)
+	
+)
+
+create table cate(
+
+cate_id int(10) unsigned not null auto_increment,
+cate_title varchar(255) not null,
+primary key (cate_id)
+
+)
+insert into user(username, password, level)  value ('admin','12345','2');
+insert into user(username, password, level)  value ('qui','123','1');
